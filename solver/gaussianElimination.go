@@ -1,4 +1,4 @@
-package equations
+package solver
 
 import (
 	"errors"

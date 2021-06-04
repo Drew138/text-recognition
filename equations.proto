@@ -1,1 +1,16 @@
 syntax = "proto3";
+package equations;
+
+option go_package = "./equations";
+
+message row {
+    repeated double vals = 1 [packed=true];
+}
+
+message matrix {
+    repeated row rows = 1;
+}
+
+service EquationService {
+    rpc SolveEquation (matrix) returns (row) {}
+}
